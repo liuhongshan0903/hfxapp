@@ -1,0 +1,39 @@
+<!--pages/myywl/myywl.wxml-->
+<view class="jfmxbox1">
+
+  <view class="jfmxtxt1">
+    <picker class="jftime" mode="date" value="{{date}}" bindchange="bindDateChange"  >
+    <input name="" type="text" class="jfmxinput1" value="{{date}}" disabled="disabled"  />
+    <image src="../../images/jftime.png" class="jftimean"></image>
+    </picker>
+    <text class="jfmxwz1">至</text>
+    <picker class="jftime" mode="date" value="{{date2}}" bindchange="bindDateChange2"  >
+    <input name="" type="text" class="jfmxinput1" value="{{date2}}" disabled="disabled"  />
+    <image src="../../images/jftime.png" class="jftimean"></image>
+    </picker>
+    <input name="" disabled="disabled" bindtap="getDatail" type="submit" class="jfmxbtn1" value="立即查询" />
+  </view>
+
+  <view  class="jfmxtxt2">
+    <view wx:for="{{resultInfo}}" wx:key="resultInfo" wx:for-item="item" class="ywllist">
+      <view class="ywltt1">订购时间<text>{{item.updateTime}}</text></view>
+      <view class="ywltxt1">
+          <view class="ywltxt1_tb1"><image src="{{item.isDelete}}"></image></view>
+          <view class="ywltxt1_tb2">
+              <view><text class="ywlms1">业务:</text><text>{{item.pointRelateId}}</text></view>
+              <view><text class="ywlms1">订购人：</text><text>{{item.pointsOwner}}</text></view>
+              <view class="ywlms2"><text class="ywlms1">积分状态:</text>
+                <text wx:if="{{item.pointsState === '1'}}" class="ywlcol1">有效</text>
+                <text wx:if="{{item.pointsState === '2'}}" class="ywlcol1">待稽核</text>
+                <text wx:if="{{item.pointsState === '3'}}" class="ywlcol1">无效</text>
+              </view>
+          </view>
+          <view class="ywltxt1_tb3"><text>+{{item.points}}</text> 积分</view>
+      </view>
+    </view>
+  
+  </view>
+<!-- 未查询到数据展示 -->
+<view class="indextxt5_kong {{showListModal}}" wx:if="{{showListModal}}" >未查询到业务量信息</view>
+
+</view>

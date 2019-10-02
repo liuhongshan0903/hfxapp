@@ -1,0 +1,178 @@
+<!--index.wxml-->
+<view class="head">
+  <image src="../../images/headbg.png" class="headbg"></image>
+  <view class="head_left">
+    <image src="../../images/headpic1.png"></image>
+  </view>
+  <view class="head_right" >
+    <view class="headcity">
+      <image src="../../images/headcity.png"></image>{{cityName}}</view>
+    <view class="headtt1">{{shopName}}的移动小店
+      <a href="#">
+        <image src="../../images/headan1.png" class="headimg1"></image>
+      </a>
+    </view>
+    <!-- bindtap="showDialogBtn" -->
+    <view>{{phone}}</view>
+    <view class="headan cc">
+      <view class="headantb1a headantb1" data-sharetwo="1"  bindtap="toShareAll">
+        <a href="#">
+          <image src="../../images/headan3.png"></image>分享我的店铺</a>
+      </view>
+
+      <view class="headantb1b headantb1" data-sharetwo="2" bindtap="toShareAll">
+        <a href="#">
+          <image src="../../images/headan4.png"></image>邀请合伙人</a>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="indexbox1">
+  <view class="indextt1">业务专区
+    <image src="../../images/indextt1.png"></image>
+  </view>
+  <view class="indextxt1" wx:for="{{resultInfo}}" wx:key="resultInfo" wx:for-item="item">
+    <view class="indextxt1lb">
+      <view class="txt1pic1">
+        <image src="{{item.shareLinkImg}}"></image>
+      </view>
+      <view class="txt1tb1">
+        <view class="txt1tt1">{{item.name}}</view>
+        <view>{{item.batchDesc}}</view>
+
+      </view>
+      <view class="txt1tb2">
+        <a href="javascript:void(0)" bindtap="showPic" class="fxan1" data-obj="{{item}}" >
+          <image src="../../images/txt1an1.png"></image>二维码
+        </a>
+
+        <a href="javascript:void(0)" class="fxan2" data-sharetwo="3"  data-obj="{{item}}" 
+         bindtap="toShareAll" >
+          <image src="../../images/txt1an2.png"></image>分享
+        </a>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+
+<view class="sharebg" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="tc_main" wx:if="{{showModal}}">
+  <image class="lingdang_img" src="../../images/lingdang.png"></image>
+  <image bindtap="hideModal" class="tan_xxx" src="../../images/tan_xxx.png" hidden='{{showandhideflag}}'></image>
+  <view class="dlqh" catchtap="pageHdtap">
+    <view class="dltab tab01 {{pageTab.curHdIndex==0? 'active': ''}}" data-id="0">短信验证码</view>
+    <view class="dltab tab02 {{pageTab.curHdIndex==1? 'active': ''}}" data-id="1">服务密码</view>
+  </view>
+  <view class="dlshow">
+
+    <view class="inputCon tab-bd01 {{pageTab.curBdIndex==0? 'show': 'hidden'}}">
+      <view class="zhang">
+        <input type="text" class="textIn textIn2" placeholder="请输入安徽移动手机号" bindtap="showInputBtn" bindinput="phoneInput" name="inputPhone" value="15755128972" maxlength="11" />
+        <!-- value="{{inputPhone}}"  -->
+        <image class="quxiao" src="../../images/quxiao.png" wx:if="{{showInput}}" bindtap="hideInputBtn"></image>
+      </view>
+      <view class="cc zhang">
+        <input type="password" class="msg msg2" maxlength="6" name="smsyzm" placeholder="请输入短信验证码" value='{{smsyzm}}' bindtap="showInputBtn2" bindinput="smsInput" />
+        <image class="quxiao2 quxiao2a" src="../../images/quxiao.png" wx:if="{{showInput2}}" bindtap="hideInputBtn2"></image>
+        <!-- <input type="button" class="getyzm getyzm2" bindtap="getSms"  id="get_btn" value="获取验证码" disabled="disabled" /> -->
+
+        <button class="getyzm getyzm2" disabled='{{disabled}}' data-id="2" bindtap="getVerificationCode">{{time}}</button>
+
+      </view>
+
+      <view class="dengl hui" data-logintwo="2" bindtap="hfxWxLogin">登录</view>
+    </view>
+    <view class="inputCon tab-bd02 {{pageTab.curBdIndex==1? 'show': 'hidden'}}" id="01">
+      <view class="zhang">
+        <input type="tel" class="textIn textIn2" placeholder="请输入安徽移动手机号" name="inputPhone1" maxlength="11" value='{{inputPhone1}}' bindtap="showInputBtn3" bindinput="phoneInputA" />
+        <image class="quxiao3" src="../../images/quxiao.png" wx:if="{{showInput3}}" bindtap="hideInputBtn3"></image>
+      </view>
+      <view class="cc zhang">
+        <input type="password" class="textIn textIn2" maxlength="6" name="smsyzm1" placeholder="请输入密码" value='{{smsyzm1}}' bindtap="showInputBtn4" bindinput="smsInputA" />
+        <image class="quxiao3" src="../../images/quxiao.png" wx:if="{{showInput4}}" bindtap="hideInputBtn4"></image>
+      </view>
+      <view class="wrong_wen hidden">*
+        <text>您输入的密码有误</text>
+      </view>
+
+      <view class="dengl hui" data-logintwo="1" bindtap="hfxWxLogin">登录</view>
+
+    </view>
+    <view class="newreg" bindtap="registFxUser">新用户注册</view>
+    <view class="wrong_wen  {{show}}">
+      <text>{{tip}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="sharebg" bindtap="hidepicModal" catchtouchmove="preventTouchMove" wx:if="{{showpicModal}}"></view>
+<view class="tc_main2" wx:if="{{showpicModal}}">
+  <image bindtap="hidepicModal" class="tan2_xxx" src="../../images/tan_xxx.png"></image>
+  <view class="tctt1">账号:
+    <text>{{phone}}</text> 的海报</view>
+   <view class="tcpic1" bindtap="save">
+       <canvas canvas-id="canvas" class="hbcanvas" ></canvas>
+       <view class="tcload" hidden="{{showMsg}}">
+      <image src="../../images/load.gif" class="imgload"></image>
+      <view>海报正在生成中...</view>
+    </view>
+    </view>
+    <view class="tctt2">点击海报保存到手机</view>
+</view>
+
+
+<view class='container' hidden="hidden">
+  <image bindtap="previewImg" mode="scaleToFill" src="{{imagePath}}"></image>
+</view>
+<!-- 画布，用来画二维码，只用来站位，不用来显示-->
+
+<view class="pfwx" bindtap="showQun">
+  <image src="../../images/pfan1.png"></image>
+  <view>社群</view>
+  <view>微信群</view>
+</view>
+
+
+<view class="sharebg" bindtap="hidequnModal" catchtouchmove="preventTouchMove" wx:if="{{showqunModal}}"></view>
+<view class="tc_main3" bindtap="hidequnModal" catchtouchmove="preventTouchMove" wx:if="{{showqunModal}}">
+  <image bindtap="hidequnModal" class="tan3_xxx" src="../../images/wxclose.png"></image>
+  <view class="tcwxtxt1">
+    <image src="../../images/wxtcpic1.jpg"></image>
+    <text>移动合伙人社群</text>
+  </view>
+  <view class="tcwxtxt2">
+    <image src="../../images/wxtcpic2.jpg"></image>
+  </view>
+  <view class="tcwxtxt3">加入本微信群，需遵守《中华人民共和国网络安全法》和《互联网群组信息服务管理规定》</view>
+</view>
+
+
+
+<!--分享弹窗-->
+<view class="sharebg" catchtouchmove="preventTouchMove" wx:if="{{showFxModal}}"></view>
+<view wx:if="{{showFxModal}}" class="tcbox" id="fxtc">
+  <view class="fxtc">
+    <view>
+      <image src="../../images/fx_bg.png" class="fximg1"></image>
+    </view> 
+    <view id="shareMessage">点击右上角的按钮进行分享</view>
+    <view id="sharePic">
+      <image src="../../images/fx_an.png" bindtap="hideFx" class="fxan11"></image>
+    </view>
+  </view>
+</view>
+
+
+
+ <view class='container'  hidden="hidden">
+  <image bindtap="previewImg"   mode="scaleToFill" src="{{imagePath}}"></image>
+</view>
+<!-- 画布，用来画二维码，只用来站位，不用来显示-->
+<view class="canvas-box" >
+  <canvas hidden="" style="width: {{imgLocation.w}}px;height: {{imgLocation.h}}px;background:#f1f1f1;" canvas-id="mycanvas" />
+  <canvas  hidden="" class="mycanvas1"    canvas-id="mycanvas1" style="width: {{windowWidth}}px; height: {{windowHeight}}px;display:flex;  text-align: center;align-items:center;"></canvas>
+  <!-- 用来画750*1334规格对的图片，然后再根据手机屏幕的大小将该图片填充，这样防止手机屏幕比例与图片不一致导致图片内容变形 -->
+     <canvas  hidden="" class="mycanvas2"    canvas-id="mycanvas2" style="width: 750px; height:1334px;display:flex;  text-align: center;align-items:center;"></canvas> 
+</view>

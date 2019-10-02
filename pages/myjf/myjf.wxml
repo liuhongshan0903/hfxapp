@@ -1,0 +1,31 @@
+<!--pages/myjf/myjf.wxml-->
+<view class="jfgzbox1">
+  <view class="jfgztxt1">
+    <view class="jfgztt1"><image src="../../images/jfgztt1an1.png"></image>我的总积分<image src="../../images/jfgztt1an2.png"></image></view>
+    <view class="jfgztable cc">
+        <view class="jfgztr2">
+            <view class="jfgzth">业务名称</view>
+            <view class="jfgzth">推广数</view>
+            <view class="jfgzth">积分</view>
+        </view>
+        <view wx:for="{{resultInfo}}" wx:key="resultInfo" wx:for-item="item" class="jfgztr">
+            <view class="jfgztd">{{item.pointRelateId}}</view>
+            <view class="jfgztd">{{item.pointsState}}</view>
+            <view class="jfgztd">{{item.points}}</view>
+        </view>
+        <view class="jfgztr">
+	    	<view class="jfgztd">{{signData.pointRelateId}}</view>
+	        <view class="jfgztd">{{signData.totalNum}}</view>
+	        <view class="jfgztd">{{signData.points}}</view>
+	     </view> 
+	     <view class="jfgztr">  
+            <view class="jfgztd">汇总</view>
+            <view class="jfgztd">{{count}}</view>
+            <view class="jfgztd">{{totalPoints}}</view>
+        </view>
+    </view>
+  </view>
+ 
+</view>
+
+<view class="indextxt5_kong {{showListModal}}"  wx:if="{{showListModal}}" >未查询到积分信息</view>

@@ -1,0 +1,32 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+.cc{clear: both;}
+.cc:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+.cc {display: inline-block;zoom:1;} 
+.cc{display: block;} 
+.tjdpbtn3{width:92%;text-align:center; font-size:32rpx; color:#fff; border:0; display: block; border-radius:45rpx; height:90rpx; line-height:90rpx;padding:0; margin:50rpx auto 0; background:-moz-linear-gradient(left,#fd8c4f,#ff513f);
+background:-webkit-gradient(linear,0 50%,100% 50%,from(#fd8c4f),to(#ff513f));
+background:-webkit-linear-gradient(left,#fd8c4f,#ff513f);
+background:-o-linear-gradient(left,#fd8c4f,#ff513f);}
+
+.zctxt1{width: 94%; padding:20rpx 3% 50rpx; background: #fff; margin-top:20rpx;}
+.zctxt1 .zctb1{line-height:70rpx; width:100%; float:left; padding:30rpx 0; border-bottom:1px solid #f2f2f2; position: relative;}
+.zctxt1 .zctb1 .zcname{width:20%; float:left; font-size:28rpx;}
+.zctxt1 .zctb1 text{color: #fd5a52; font-size: 24rpx; float:left;}
+.zctxt1 .zctb2{border-bottom: 0; padding-bottom: 0;}
+.zcinput1{width:410rpx; margin:0 2%; padding:0 3%; font-size:26rpx; height:68rpx; line-height: 68rpx; border:1rpx solid #cdcdcd; border-radius:5rpx; float:left;}
+.getyzm{width:180rpx; text-align: center; top:8rpx; right: 3.5%; height:70rpx; line-height:61rpx; background: #009eff;filter: alpha(opacity=100); opacity: 1;border: 0;color: #fff;font-size:26rpx;border-radius:5rpx; position: absolute;}
+.getyzm.hui{background: #cccccc;color: #fff;}
+.zcwz{font-size:22rpx; padding-left: 22%; width:78%; float: left;}
+.tjdpbtn3{float: left; margin:30rpx 0 0 0; width: 100%;}
+.actgz{width:94%; padding:30rpx 3%; line-height:45rpx;}
+.actgztt1{font-size:30rpx;}
+.actgztxt1{font-size:26rpx; padding-top:10rpx;}

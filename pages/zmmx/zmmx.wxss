@@ -1,0 +1,9 @@
+/* pages/zmmx/zmmx.wxss */
+@import "../../pages/dhdetail/dhdetail.wxss";
+.zmmxan1{width:88rpx; height: 44rpx; line-height:44rpx; text-align: center; border: 1px solid #5666ff; border-radius:44rpx; float: right; color: #5666ff; margin-top: 20rpx;}
+
+.jfmxtxno{width:25%; padding-top:75rpx; text-align: center;}
+
+.jfmxtxnop{width:94%; padding:25rpx 3%; margin-bottom:20rpx; background: #fff; border-radius:10rpx; float:left; font-size: 26rpx; line-height:50rpx;}
+
+.indextxt5_kong{font-size:15px; padding:25rpx 0; text-align:center; line-height:50rpx; color:#666; width:100%;  margin:5px auto; border-radius:5px;}

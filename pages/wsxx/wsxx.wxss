@@ -1,0 +1,6 @@
+/* pages/wsxx/wsxx.wxss */
+page{background-color:#f7f7f7;}
+.zctxt2{font-size:24rpx; padding:20rpx 10rpx 20rpx 30rpx; line-height:40rpx; background:#fde4e4; border-radius:5rpx; margin:20rpx 0 40rpx;}
+
+.tctstxt1{width:60%; top: 40%; left: 20%; z-index: 99999; position: absolute;  padding:20rpx 0 30rpx; border-radius: 5px; background: rgba(0,0,0,0.6); text-align: center; font-size:26rpx; line-height:50rpx; color: #fff;}
+.tctstxt1 image{width:55rpx; height:55rpx; margin:20rpx auto 0;}

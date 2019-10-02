@@ -1,0 +1,32 @@
+<!--pages/myjfmx/myjfmx.wxml-->
+<view class="jfmxbox1">
+
+<view class="jfmxtxt1">
+ <picker class="jftime" mode="date" value="{{date}}"   bindchange="bindDateChange">
+<input name="" type="text" class="jfmxinput1" value="{{date}}" disabled="disabled" />
+<image src="../../images/jftime.png" class="jftimean"></image>
+ </picker>
+ <text class="jfmxwz1">至</text>
+ <picker class="jftime" mode="date" value="{{date2}}" bindchange="bindDateChange2">
+<input name="" type="text" class="jfmxinput1" value="{{date2}}"  disabled="disabled" />
+<image src="../../images/jftime.png" class="jftimean"></image>
+ </picker>
+ <input name="" disabled="disabled" bindtap="getHistory" type="submit" class="jfmxbtn1" value="立即查询" />
+</view>
+
+<view  wx:for="{{resultInfo}}" wx:key="resultInfo" wx:for-item="item" class="jfmxtxt2">
+  <view class="jfmxtxt2list">
+    <view class="jfmxtxt2lt">
+      <view><text class="jfmxtxt2tb1">状  态：</text>
+      <text wx:if="{{item.recordState === '1'}}" class="jfmxtxt2tb2">兑换中</text>
+      <text wx:elif="{{item.recordState === '4'}}" class="jfmxtxt2tb2">兑换中</text>
+      <text wx:elif="{{item.recordState === '2'}}" class="jfmxtxt2tb2">兑换成功</text>
+       <text wx:else class="jfmxtxt2tb2">兑换失败</text>
+      </view>
+      <view><text class="jfmxtxt2tb1">兑换时间: </text><text  class="jfmxtxt2tb3">{{item.createDate}}</text></view>
+    </view>
+    <view class="jfmxtxt2rt"><text class="jfmxtxt2tb4">{{item.recordPoints}}</text> 积分</view>
+  </view>
+</view>
+
+</view>

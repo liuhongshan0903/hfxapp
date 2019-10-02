@@ -1,0 +1,41 @@
+{
+  "pages": [  
+    "pages/index/index",
+    "pages/dpma/dpma",
+    "pages/wsxx/wsxx",
+    "pages/register/register",
+    "pages/jfdh/jfdh",
+    "pages/logs/logs",
+    "pages/myjf/myjf",
+    "pages/zmmx/zmmx",
+    "pages/dhdetail/dhdetail",
+    "pages/ywl/ywl",
+    "pages/web/web"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#018fe6",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#202020",
+    "selectedColor": "#fd5a52",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/ftan1.png",
+        "selectedIconPath": "images/ftan1a.png"
+      },
+      {
+        "pagePath": "pages/jfdh/jfdh",
+        "text": "积分兑换",
+        "iconPath": "images/ftan2.png",
+        "selectedIconPath": "images/ftan2a.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,83 @@
+<!--pages/jfdh/jfdh.wxml-->
+<view class="jftt1">我的业绩</view>
+<view class="jftxt1 cc">
+    <view class="jftxt1tb1">
+        <a bindtap = "totalPoint">
+        <view class="txt1num">{{userData.totalPoints}}</view>
+        <view>总积分</view>
+        </a>
+    </view>
+    <view class="jftxt1tb1">
+        <a bindtap = "totalOrder">
+        <view class="txt1num">{{userData.totalOrder}}</view>
+        <view>业务量</view>
+        </a>
+    </view>
+    <view class="jftxt1tb1">
+        <a bindtap = "recruitNum">
+        <view class="txt1num">{{userData.recruitNum}}</view>
+        <view>招募数</view>
+        </a>
+    </view>
+</view>
+<view class="jftxt2">
+  <view class="dhgz" bindtap = "dhgz">兑换规则</view>
+  <view class="jftxt2_qh" catchtap="pageHdtap" >
+  <block wx:for="{{userData.typeList}}" wx:key="index" wx:for-item="item">
+      <view bindtap = "change"  id = "{{item.dataValue}}@{{item.dataKey}}" class="tab tab0{{index}}  {{pageTab.curHdIndex==index? 'active': ''}}" data-id="{{index}}" style = "width:{{100/userData.typeList.length}}%">{{item.comments}}<em></em></view>
+  </block>
+</view>
+
+<view class="jftxt2_content tab-bd">
+  	<view class="tab-bd01 {{pageTab.curBdIndex==prizeType? 'show': 'hidden'}}">
+    <block wx:if="{{showPrizeModal}}">
+	    <view class="jftxt2tb3 cc" catchtap="llHdtap">
+	      <block wx:if = "{{prizeList}}">
+		      <block wx:for="{{prizeData}}" wx:key = "index" wx:for-item="item">
+		      	 <view data-tid="{{item.goodsNo}}@{{item.orderPoints}}" bindtap = "selectPrize" class="jftxt2ll lltab0{{item.id+1}} {{llTab.llcurHdIndex==index ? 'active': ''}}" data-id="{{item.id}}"><image class="jfimg1" src="../../images/jftxt2_an1.png" ></image><image class="jfimg2" src="../../images/jftxt2_an2.png" ></image>{{item.ruleName}}<em>*{{item.orderPoints}}积分</em></view>
+		      </block>
+	      </block>
+	      <block wx:if = "{{!prizeList}}">
+	          <view style = "color:red">暂没有该类产品的兑换信息，请继续关注公告!</view>
+	      </block>
+	    </view>
+    </block>
+    	<view class="jftxt2tb1"><view class="dhjf"><a>{{userData.exchangeTotalPoints}}</a></view>可兑换积分</view>
+	    <block wx:if="{{!showPrizeModal}}"> 
+	    	<view class="jftxt2tb1">
+		        <view class="txt1jfan">
+			        <input bindtap="reduceExchangeNum" disabled ='disabled' type="submit" class="tjdpinput1" value="-" />
+			        <input type="text" id="amount" value="{{exchangeNum}}" bindinput = "exchangeNum" bindblur = "removeFocus" class="tjdpinput2" />
+			        <input type="submit"  disabled ='disabled' bindtap="addExchangeNum" class="tjdpinput3" value="+" />
+		       </view>兑换数量
+		    </view>  
+	     </block>
+    	<view class="tjdpbtn3" bindtap = "exchange">立即兑换</view>
+    	<view class="jftxt2tb1 jftxt2tb2"><a bindtap = "dhdetail">积分兑换明细<image src="../../images/jfan1.png"></image></a></view>
+  	</view>
+	</view>
+</view>
+
+<view class="jftxt3 cc">
+  <view class="jftxt3tt1">积分排名<image src="../../images/jftxt3_li.png"></image></view>
+  <view class="jftxt3tb1">
+    <view class="tr">
+      <view class="th">店名</view>
+      <view class="th">积分数</view>
+      <view class="th">排名</view>
+    </view>
+    <view class="tr" style = "color:red">
+      <view class="td">{{userData.grpm.pointsType}}</view>
+      <view class="td">{{userData.grpm.points}}</view>
+      <view class="td">{{userData.grpm.id}}</view>
+    </view>
+    <block wx:for="{{userData.rankList.resultList}}" wx:key="index" wx:for-item="item">
+	    <view class="tr">
+	      <view class="td">{{item.pointsType}}</view>
+	      <view class="td">{{item.points}}</view>
+	      <view class="td">{{item.id}}</view>
+	    </view>
+    </block>
+  </view>       
+</view>
+

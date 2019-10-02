@@ -1,0 +1,9 @@
+/* pages/dpma/dpma.wxss */
+page{background:#f7f7f7;}
+.dpma{width:100%; position:relative;}
+.dpma image{width:100%; height:1150rpx;}
+.dptxt1{width:385rpx; line-height:40rpx; height:105rpx; position: absolute; top:130rpx; left:280rpx;}
+.dptt1{font-size:36rpx;}
+.dpms1{font-size:30rpx; margin-top:10rpx;}
+.dppic1{width:202rpx; top:760rpx; left:275rpx; position: absolute;}
+.dppic1 image{width:100%; height:202rpx;}

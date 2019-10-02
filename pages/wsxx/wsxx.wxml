@@ -1,0 +1,27 @@
+<!--pages/wsxx/wsxx.wxml-->
+<view class="zctxt1 cc">
+    <view class="zctxt2">
+        惠分享人人分销升级啦，产品更丰富！奖励更诱人！操作更便利！完善以下信息，提交注册，感受惠分享的全新体验吧！
+    </view>
+    <view class="zctb1"><view class="zcname">小店昵称</view><input type="text" maxlength="8"  name="userName"  bindinput="userNameInput"   value='{{userName}}' class="zcinput1" placeholder="请输入小店昵称" /><text>*必填</text>
+        <view class="zcwz">2-8个字符，可使用字母、数字、中文</view>
+    </view>
+    <view class="tjdpbtn3" bindtap="perfectMsg" >提交注册</view >
+</view>
+<view class="actgz">
+    <view class="actgztt1">活动规则</view>
+    <view class="actgztxt1"> <p>（1）用户进入系统页面后可注册成为移动"推广人"，开启自己的小店。</p>
+        <p>（2）“推广人"可在个人店铺页面中获取专属业务二维码海报并在各社交平台传播推广，其他用户扫码完成办理即计入对应" 推广人"推广成果。</p>
+        <p>（3）"推广人"可在小店店铺中发起邀请，将邀请链接分享给微信好友或朋友圈，招募好友注册成为“推广人”。</p>
+        <p>（4）根据业务推广成果向对应"推广人"发放推广奖励。</p>
+        <p>（5）通过裂变招募的"推广人" 成功推荐业务达到一定数量 后，上级"推广人"可获得额外奖励。</p>
+        <p>（6）注册用户每日签到，也可获取对应的签到奖励积分，签到积分实时有效。</p>
+        <p>（7）本次活动奖励形式包括和包电子券，流量和话费。成功完成"业务推广"或"传播裂变"可实时获得"推广积分"，次月稽核有效后，可自助兑换为和包电子券、流量或话费。</p>
+    
+    </view> 
+</view>
+
+<view class="tctstxt1" hidden="{{showFlag}}" >
+    <image src="../../images/tsan1.png"></image>
+    <view>{{showMsg}}</view>
+</view>

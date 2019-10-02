@@ -1,0 +1,11 @@
+<!--pages/dpma/dpma.wxml-->
+<view class="dpma">
+  <image src="../../images/dpbg.png"></image>
+  <view class="dptxt1">
+    <view class="dptt1">陌上花开的移动小店</view>
+    <view class="dpms1">183*****5040</view>
+  </view>
+  <view class="dppic1">
+    <image src="../../images/dppic2.png"></image>
+  </view>
+</view>

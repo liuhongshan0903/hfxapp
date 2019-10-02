@@ -1,0 +1,16 @@
+/* pages/myjf/myjf.wxss */
+page{background-color:#f4f4f4;}
+.jfgzbox1{padding:0 3% 30rpx;}
+.jfgztxt1,.jfgztxt2{width:94%; padding:30rpx 3% 40rpx; background:#fff; border-radius:10px; margin-top:20rpx;}
+.jfgztt1{font-size:36rpx; line-height:60rpx; text-align:center;}
+.jfgztt1 image{width:46rpx; height:22rpx; margin:0 20rpx;}
+.jfgztable{width:100%; font-size:26rpx; text-align: center; line-height:40rpx; padding:20rpx 0;}
+.jfgztd,.jfgzth{width:29%; padding:0 2%; float:left; height:100rpx; display: flex; align-items:center;justify-content: space-around;flex-direction: column;}
+.jfgztr,.jfgztr2{border:1px solid #ddd; width: 99.5%; float:left; height:100rpx;}
+.jfgztr2{background:#4697fb; border-color:#4697fb; border-bottom:1px solid #ddd; color: #fff; border-radius:10px 10px 0 0;}
+.jfgztable .jfgztd,.jfgztable .jfgzth{ border-right:1px solid #ddd;}
+.jfgztable .jfgztd:last-child,.jfgztable .jfgzth:last-child{ border-right:0;}
+.jfgztr{border-top:0;}
+.jfgztable .jfgztr:nth-child(2n+1){background: #fafafb;}
+
+.indextxt5_kong{font-size:15px; padding:25rpx 0; text-align:center; line-height:50rpx; color:#666; width:100%;  margin:5px auto; border-radius:5px;}

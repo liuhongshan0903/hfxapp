@@ -1,0 +1,30 @@
+<!--pages/zmmx/zmmx.wxml-->
+<view class="jfmxbox1">
+
+<view class="jfmxtxt1">
+ <picker class="jftime" mode="date" value="{{date}}" bindchange="bindDateChange">
+<input name="" type="text" class="jfmxinput1" value="{{date}}" disabled="disabled" />
+<image src="../../images/jftime.png" class="jftimean"></image>
+ </picker>
+ <text class="jfmxwz1">至</text>
+ <picker class="jftime" mode="date" value="{{date2}}" bindchange="bindDateChange2">
+<input name="" type="text" class="jfmxinput1" value="{{date2}}" disabled="disabled" />
+<image src="../../images/jftime.png" class="jftimean"></image>
+ </picker>
+ <input name="" disabled="disabled" bindtap="recruitDetail" type="submit" class="jfmxbtn1" value="立即查询" />
+</view>
+
+<view  wx:for="{{resultInfo}}" wx:key="resultInfo" wx:for-item="item" class="jfmxtxt2">
+  <view class="jfmxtxt2list">
+    <view class="jfmxtxt2lt">
+      <view><text class="jfmxtxt2tb1">招募对象: </text><text class="jfmxtxt2tb2">{{item.fxRanke}}</text></view>
+      <view><text class="jfmxtxt2tb1">招募时间: </text>
+      <text  class="jfmxtxt2tb3">{{item.createTime}}</text></view>
+    </view>
+    <view bindtap="navigateToMyywl" data-fxcode="{{item.fxCode}}" class="zmmxan1">详细</view>
+  </view>
+</view>
+<!-- 未查询到数据展示 -->
+<view class="indextxt5_kong {{showListModal}}" wx:if="{{showListModal}}" >未查询到招募明细信息</view>
+</view>
+

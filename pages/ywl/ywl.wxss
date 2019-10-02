@@ -1,0 +1,20 @@
+/* pages/myywl/myywl.wxss */
+@import "../../pages/dhdetail/dhdetail.wxss";
+.jfmxtxt2{width:94%; padding:20rpx 3% 0;}
+.ywllist{width:94%; padding:25rpx 3%; margin-bottom:20rpx; background: #fff; border-radius:10rpx; float:left; font-size: 24rpx;}
+.ywltt1{color: #999; line-height:50rpx; height: 50rpx; overflow: hidden;}
+.ywltt1 text{padding-left:25rpx;}
+.ywltxt1{width:100%; padding-top:10rpx; line-height: 40rpx;}
+.ywltxt1_tb1{width:100rpx; float: left; padding-top: 14rpx;}
+.ywltxt1_tb1 image{width:100rpx; height:100rpx; border-radius:10rpx;}
+.ywltxt1_tb2{width:60%; float:left; padding-left: 3%;}
+.ywltxt1_tb2 view{height:40rpx; overflow: hidden;}
+.ywltxt1_tb3{width:22%; float:right; font-size: 26rpx; margin-top: 15rpx; text-align: right; height:40rpx; overflow: hidden;}
+.ywltxt1_tb3 text{font-size:30rpx; color: #5666ff;}
+.ywlms1{width:140rpx; color: #999; display: inline-block;}
+.ywlms2{ margin-top: 10rpx;}
+.ywlcol1{color:#5666ff;}
+.ywlcol2{color:#ffaf02;}
+.ywlcol3{color:#f72845;}
+
+.indextxt5_kong{font-size:15px; padding:25rpx 0; text-align:center; line-height:50rpx; color:#666; width:100%;  margin:5px auto; border-radius:5px;}
